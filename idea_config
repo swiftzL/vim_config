@@ -10,6 +10,7 @@
 set scrolloff=5
 
 " Do incremental searching.
+" zc zo > = 缩进
 set incsearch
 
 " Don't use Ex mode, use Q for formatting.
@@ -37,6 +38,11 @@ nnoremap J 10j
 nnoremap K 10k
 
 nmap <Leader>e <Action>(SelectInProjectView)
+nnoremap <Leader>re :action RenameElement<CR>
+nnoremap <Leader>gi :action GotoImplementation<CR>
+nnoremap <Leader>im :action ImplementMethods<CR>
+nnoremap <Leader>em :action ExtractMethod<CR>
+nnoremap <Leader>sw :action SurroundWith<CR>
 
 set easymotion
 map sn <Plug>(easymotion-s)
@@ -46,6 +52,11 @@ set NERDTree
 
 
 
+" plugin IdeaVim-Quickscope
+
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+set which-key
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
